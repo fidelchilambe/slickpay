@@ -1,0 +1,244 @@
+<!-- features.html (Features Page) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PayGlok - Features</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* Header content above gradient */
+.header-content {
+    position: relative;
+    z-index: 2;
+}
+/* Decorative half-circle gradient */
+.half-circle-gradient {
+    position: absolute;
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 300px;
+    background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+    border-bottom-left-radius: 300px;
+    border-bottom-right-radius: 300px;
+    z-index: 1;
+    opacity: 0.35;
+    pointer-events: none;
+}
+body { font-family: 'Roboto', sans-serif; scroll-behavior: smooth; background:#0f172a; color:#fff; }
+
+/* Logo image style */
+.logo-img {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Navbar */
+nav { background:#0f172a; }
+nav a { color:#cbd5e1; transition: color 0.3s; }
+nav a:hover { color:#3b82f6; }
+
+/* Hero */
+.hero-bg { 
+    background: linear-gradient(135deg, #0f172a, #1e293b); 
+    position: relative; 
+    overflow: hidden; 
+    padding-top:8rem;
+    padding-bottom:6rem; 
+    text-align:center; 
+}
+.hero-bg h1 { font-size:2.5rem; margin-bottom:1rem; font-weight:600; }
+.hero-bg p { font-size:1.125rem; margin-bottom:2rem; color:#cbd5e1; }
+.hero-btn { background:linear-gradient(90deg,#3b82f6,#6366f1); padding:0.75rem 2rem; border-radius:9999px; font-weight:500; color:#fff; transition:all 0.3s; }
+.hero-btn:hover { transform:scale(1.05); }
+
+/* Phone Mockup */
+.ring-container { position:relative; width:260px; height:520px; margin:3rem auto 0; }
+.phone-mockup {
+    width:100%;
+    height:100%;
+    border-radius:40px;
+    border:10px solid #1e293b;
+    background: url('https://via.placeholder.com/300x600/0f172a/3b82f6?text=Money+Transfer') center/cover no-repeat;
+    position:relative;
+    z-index:10;
+    animation: floatPhone 4s ease-in-out infinite alternate;
+}
+.white-ring, .blue-ring {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    border-radius:50px;
+    animation: rotateRing 6s linear infinite;
+    opacity:0.5;
+}
+.white-ring { width:280px; height:540px; border:3px solid #fff; }
+.blue-ring { width:320px; height:580px; border:3px solid #3b82f6; animation-duration:10s; }
+@keyframes rotateRing {
+    0%{transform:translate(-50%,-50%) rotate(0deg);}
+    100%{transform:translate(-50%,-50%) rotate(360deg);}
+}
+@keyframes floatPhone {
+    0%{transform:translateY(0);}
+    100%{transform:translateY(-15px);}
+}
+
+/* Features Section */
+.feature-card { background:#1e293b; padding:2rem; border-radius:1rem; transition: transform 0.5s, box-shadow 0.5s; }
+.feature-card:hover { transform:scale(1.05); box-shadow:0 20px 40px rgba(0,0,0,0.4); }
+
+/* Pricing Section */
+.pricing-card { background:#1e293b; padding:2rem; border-radius:1rem; text-align:center; transition:transform 0.3s, box-shadow 0.3s; }
+.pricing-card:hover { transform:scale(1.05); box-shadow:0 20px 40px rgba(0,0,0,0.4); }
+
+/* Footer */
+footer { background:#0f172a; text-align:center; padding:2rem 0; color:#cbd5e1; }
+footer a:hover { color:#3b82f6; transition:all 0.3s; }
+</style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="fixed w-full z-50 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+        <span class="flex items-center">
+            <img src="logo.PNG" alt="PayGlok Logo" class="logo-img mr-2">
+        </span>
+        <ul class="hidden md:flex space-x-6 text-gray-700">
+            <li><a href="index.html" class="hover:text-blue-600 transition-colors">Home</a></li>
+            <li><a href="features.html" class="hover:text-blue-600 transition-colors">Features</a></li>
+            <li><a href="pricing.html" class="hover:text-blue-600 transition-colors">Pricing</a></li>
+            <li><a href="about.html" class="hover:text-blue-600 transition-colors">About</a></li>
+            <li><a href="contact.html" class="hover:text-blue-600 transition-colors">Contact</a></li>
+        </ul>
+        <!-- Mobile Menu Button -->
+        <button id="menu-btn" class="md:hidden text-gray-700 focus:outline-none" aria-label="Toggle Menu">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"/>
+            </svg>
+        </button>
+    </div>
+    <!-- Mobile Menu -->
+    <ul id="mobile-menu" class="hidden flex-col space-y-2 px-4 pb-4 md:hidden bg-[#0f172a] text-gray-300">
+        <li><a href="index.html" class="block py-2">Home</a></li>
+        <li><a href="features.html" class="block py-2">Features</a></li>
+        <li><a href="pricing.html" class="block py-2">Pricing</a></li>
+        <li><a href="about.html" class="block py-2">About</a></li>
+        <li><a href="contact.html" class="block py-2">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- Features Header -->
+<header class="hero-bg">
+    <div class="half-circle-gradient"></div>
+    <div class="max-w-7xl mx-auto px-4 text-center header-content" data-aos="fade-down">
+        <h1 class="text-5xl font-semibold mb-4">Just Launched: Next-Level Features</h1>
+    <p class="text-xl mb-8 max-w-2xl mx-auto">Unlock a world of innovation with PayGlok. Enjoy cutting-edge tools, instant payments, and unbeatable security—designed for you. Join our launch and be the first to experience the future of finance!</p>
+    </div>
+</header>
+
+<!-- Detailed Features Section -->
+<section class="py-24">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="feature-card bg-white p-6 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="text-2xl font-medium mb-4 text-gray-900">Hands-Free Payments</h3>
+                <p class="text-gray-600 mb-4">Enable secure, contactless payments using voice commands or gestures, ideal for driving or busy lifestyles. Supports NFC and Bluetooth integrations for seamless transactions.</p>
+                <ul class="list-disc pl-5 text-gray-600">
+                    <li>Voice-activated transfers</li>
+                    <li>Gesture-based approvals</li>
+                    <li>Compatible with wearables</li>
+                </ul>
+            </div>
+
+            <div class="feature-card bg-white p-6 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="text-2xl font-medium mb-4 text-gray-900">Bank Integrations</h3>
+                <p class="text-gray-600 mb-4">Connect effortlessly with major banks worldwide, including BNA, Al Baraka, Edahabia, and more. Real-time syncing ensures your balances are always up-to-date.</p>
+                <ul class="list-disc pl-5 text-gray-600">
+                    <li>Over 500 bank partners</li>
+                    <li>Instant account linking</li>
+                    <li>Automated reconciliation</li>
+                </ul>
+            </div>
+
+            <div class="feature-card bg-white p-6 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="300">
+                <h3 class="text-2xl font-medium mb-4 text-gray-900">Global Support</h3>
+                <p class="text-gray-600 mb-4">Transact in 135+ currencies with competitive exchange rates and minimal fees. Multi-language support and 24/7 customer service available.</p>
+                <ul class="list-disc pl-5 text-gray-600">
+                    <li>Real-time currency conversion</li>
+                    <li>Low cross-border fees</li>
+                    <li>Global compliance standards</li>
+                </ul>
+            </div>
+
+            <div class="feature-card bg-white p-6 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="text-2xl font-medium mb-4 text-gray-900">AI Budgeting Assistance</h3>
+                <p class="text-gray-600 mb-4">Leverage artificial intelligence to track expenses, predict future spending, and suggest personalized budgets. Get insights on saving opportunities and financial goals.</p>
+                <ul class="list-disc pl-5 text-gray-600">
+                    <li>Automated expense categorization</li>
+                    <li>Predictive forecasting</li>
+                    <li>Custom alerts and recommendations</li>
+                </ul>
+            </div>
+
+            <div class="feature-card bg-white p-6 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="text-2xl font-medium mb-4 text-gray-900">Fraud Detection Systems</h3>
+                <p class="text-gray-600 mb-4">Advanced machine learning algorithms monitor transactions in real-time to detect and prevent fraud. Instant notifications and automatic blocks for suspicious activity.</p>
+                <ul class="list-disc pl-5 text-gray-600">
+                    <li>Behavioral analysis</li>
+                    <li>Multi-factor authentication</li>
+                    <li>Zero-liability protection</li>
+                </ul>
+            </div>
+
+            <div class="feature-card bg-white p-6 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="300">
+                <h3 class="text-2xl font-medium mb-4 text-gray-900">Bluetooth Money Sharing</h3>
+                <p class="text-gray-600 mb-4">Share money instantly with friends and family nearby using Bluetooth technology. Fast, secure, and perfect for splitting bills or sending small amounts.</p>
+                <ul class="list-disc pl-5 text-gray-600">
+                    <li>Instant nearby transfers</li>
+                    <li>No internet required</li>
+                    <li>Secure encrypted transactions</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="max-w-7xl mx-auto px-4 text-center">
+    <p>&copy; 2025 PayGlok. All rights reserved.</p>
+        <ul class="flex justify-center space-x-4 mt-4">
+            
+        </ul>
+    </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({ duration: 1200, once: true, easing: 'ease-out-cubic' });
+    // Mobile Menu Toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if(menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    }
+</script>
+</body>
+</html>
