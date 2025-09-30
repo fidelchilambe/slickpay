@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reviews | PayGlok</title>
+  <style>
+    /* Reset */
+    * {margin:0;padding:0;box-sizing:border-box;}
+    body,html {
+      height:100%;
+      font-family:'Segoe UI',sans-serif;
+      background:#000;
+      color:#fff;
+      scroll-behavior:smooth;
+      overflow-x:hidden;
+    }
+
+    /* Header */
+    .header {
+      width:100%;position:fixed;top:0;left:0;
+      display:flex;justify-content:space-between;align-items:center;
+      padding:15px 8%;
+      background:rgba(0,0,0,0.4);backdrop-filter:blur(10px);
+      z-index:1000;animation:fadeDown 1s ease;
+    }
+    .header img {
+      height:60px;transition:transform 0.3s ease;
+    }
+    .header img:hover {transform:scale(1.05);}
+
+    /* Nav */
+    .nav-links {display:flex;gap:35px;}
+    .nav-links a {
+      color:#ddd;text-decoration:none;font-weight:600;position:relative;
+      transition:color 0.3s ease;
+    }
+    .nav-links a:hover {color:#00e0c6;}
+
+    /* Hamburger (Mobile) */
+    .menu-icon {
+      display:none;flex-direction:column;cursor:pointer;gap:6px;
+      z-index:1100; /* stays clickable above menu */
+    }
+    .menu-icon span {
+      width:25px;height:3px;background:#fff;border-radius:2px;
+      transition:0.3s;
+    }
+
+    /* Mobile Nav */
+    .mobile-nav {
+      display:none;flex-direction:column;align-items:center;
+      background:#000;position:fixed;top:75px;left:0;width:100%;
+      padding:20px 0;gap:20px;z-index:1000;
+      border-top:1px solid #111;
+    }
+    .mobile-nav a {
+      color:#ddd;font-weight:600;text-decoration:none;
+    }
+    .mobile-nav a:hover {color:#00e0c6;}
+    .mobile-nav.show {display:flex;}
+
+    /* Hero */
+    .hero {
+      height:60vh;display:flex;align-items:center;justify-content:center;
+      background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1920') center/cover no-repeat;
+      position:relative;text-align:center;
+    }
+    .hero::after {
+      content:"";position:absolute;top:0;left:0;width:100%;height:100%;
+      background:rgba(0,0,0,0.55);
+    }
+    .hero-content {position:relative;z-index:2;}
+    .hero-content h1 {
+      font-size:3rem;color:#00e0c6;
+      text-shadow:0 0 15px #00a68f;
+      animation:fadeUp 1.5s ease;
+    }
+
+    /* Reviews */
+    .reviews {
+      padding:80px 10%;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:30px;
+    }
+    .review {
+      background:rgba(20,20,20,0.9);
+      padding:30px;border-radius:14px;
+      font-style:italic;color:#bbb;
+      border:1px solid #00e0c6;
+      transition:transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .review:hover {
+      transform:translateY(-10px);
+      box-shadow:0 0 20px #00e0c6;
+    }
+
+    /* Animations */
+    @keyframes fadeDown {from{opacity:0;transform:translateY(-40px);}to{opacity:1;transform:translateY(0);} }
+    @keyframes fadeUp {from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);} }
+
+    /* Responsive */
+    @media(max-width:768px){
+      .nav-links {display:none;}
+      .menu-icon {display:flex;}
+      .hero-content h1 {font-size:2rem;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <img src="logo.png" alt="PayGlok Logo">
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="features.html">Features</a>
+    <a href="reviews.html" style="color:#00e0c6;">Reviews</a>
+    <a href="join.html">Join</a>
+  </div>
+  <div class="menu-icon" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</div>
+
+<!-- Mobile Menu -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="features.html">Features</a>
+  <a href="reviews.html" style="color:#00e0c6;">Reviews</a>
+  <a href="join.html">Join</a>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>User Reviews</h1>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="reviews">
+  <div class="review">“PayGlok makes sending money feel effortless. The speed is unmatched.”</div>
+  <div class="review">“Finally, an app that puts security first without slowing me down.”</div>
+  <div class="review">“The AI insights are a game-changer. It feels like I have a finance coach.”</div>
+  <div class="review">“Love the temporary self-destruct cards. Online shopping feels safe again.”</div>
+  <div class="review">“PayGlok redefines money — smooth, smart, and stress-free.”</div>
+</section>
+
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('mobileNav');
+    nav.classList.toggle('show');
+  }
+</script>
+
+</body>
+</html>

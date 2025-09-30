@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join | PayGlok</title>
+<style>
+  * {margin:0;padding:0;box-sizing:border-box;}
+  body,html {height:100%;font-family:'Segoe UI',sans-serif;background:#000;color:#fff;}
+  .header {width:100%;position:fixed;top:0;left:0;display:flex;justify-content:space-between;align-items:center;padding:15px 8%;background:rgba(0,0,0,0.4);backdrop-filter:blur(10px);z-index:1000;}
+  .header img {height:60px;}
+  .nav-links {display:flex;gap:35px;}
+  .nav-links a {color:#ddd;text-decoration:none;font-weight:600;}
+  .nav-links a:hover {color:#00e0c6;}
+  .hero {height:100vh;display:flex;align-items:center;justify-content:center;background:url('https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=1920') center/cover no-repeat;position:relative;text-align:center;}
+  .hero::after {content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.65);}
+  .join-box {position:relative;z-index:2;background:rgba(0,0,0,0.7);padding:50px;border-radius:14px;max-width:500px;text-align:center;}
+  .join-box h1 {color:#00e0c6;margin-bottom:20px;}
+  .join-box form {display:flex;flex-direction:column;gap:20px;}
+  .join-box input {padding:15px;border:none;border-radius:8px;}
+  .join-box button {padding:15px;border:none;border-radius:30px;background:linear-gradient(90deg,#00e0c6,#009c85);color:#000;font-weight:bold;cursor:pointer;transition:0.3s;}
+  .join-box button:hover {transform:scale(1.05);box-shadow:0 0 20px #00e0c6;}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <img src="logo.png" alt="PayGlok Logo">
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="features.html">Features</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="join.html" style="color:#00e0c6;">Join</a>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="join-box">
+    <h1>Join PayGlok Today</h1>
+    <p>Experience the future of payments — seamless, secure, and intelligent.</p>
+    <form>
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <input type="password" placeholder="Password" required>
+      <button type="submit">Sign Up</button>
+    </form>
+  </div>
+</section>
+
+</body>
+</html>
